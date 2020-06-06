@@ -14,8 +14,9 @@ app.use(pino); // For fast, detailed and color orientated output to the console.
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Example endpoint with basic error handling
-app.get('/', async (req, res, next) => {
+app.get('/', async function (req, res, next) {
   try {
+    res.json({ success: true });
     //Do stuff
   } catch (e) {
     req.log.error(e);
