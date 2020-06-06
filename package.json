@@ -1,0 +1,63 @@
+{
+  "name": "homefront-api",
+  "version": "1.0.0",
+  "description": "cynerge homefront nodejs backend.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/mocha.js",
+    "build": "gulp",
+    "startDev": "node src/app.js",
+    "startProd": "node publish/main-min.js",
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test && npm run build",
+      "pre-push": "npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run pretty",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "node",
+    "js",
+    "cynerge",
+    "homefront",
+    "api"
+  ],
+  "author": "Parker Bidigare",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-bundle-assets": "^2.29.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
+    "mocha": "^7.2.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "compression": "^1.7.4",
+    "eslint": "^7.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "express": "^4.17.1",
+    "express-pino-logger": "^5.0.0",
+    "gulp-cli": "^2.2.1",
+    "helmet": "^3.22.0",
+    "pino-pretty": "^4.0.0"
+  }
+}
