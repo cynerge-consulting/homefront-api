@@ -9,10 +9,9 @@ var path = require('path');
 var pino = require('express-pino-logger')();
 
 var port = 3000;
-var app = new express();
-app.use(compression); // compressed responses for faster responses from the endpoints.
+var app = new express(); //app.use(compression()); // compressed responses for faster responses from the endpoints.
 
-app.use(helmet); // For basic protection of the server.
+app.use(helmet()); // For basic protection of the server.
 
 app.use(pino); // For fast, detailed and color orientated output to the console.
 

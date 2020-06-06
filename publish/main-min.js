@@ -5,8 +5,7 @@ var helmet = require('helmet'),
   pino = require('express-pino-logger')(),
   port = 3e3,
   app = new express();
-app.use(compression),
-  app.use(helmet),
+app.use(helmet()),
   app.use(pino),
   app.use(express.static(path.join(__dirname, 'public'))),
   app.get('/', async function (e, p, r) {
