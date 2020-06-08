@@ -1,2 +1,9 @@
-node_modules
-publish
+# Node
+**/node_modules/
+
+# built/distributed files
+./publish/
+
+# Configuration files
+**/config/local.*
+**/.env

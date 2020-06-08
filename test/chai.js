@@ -1,3 +1,3 @@
-const chai = require('chai');
+const chai = require("chai");
 
 // Used for chai tests
