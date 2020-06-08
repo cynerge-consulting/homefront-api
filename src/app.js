@@ -1,20 +1,21 @@
-var helmet = require('helmet');
-var compression = require('compression');
-var express = require('express');
-var path = require('path');
-var pino = require('express-pino-logger')();
+var config = require("config");
+var helmet = require("helmet");
+var compression = require("compression");
+var express = require("express");
+var path = require("path");
+var pino = require("express-pino-logger")();
 
-var port = 3000;
+var port = config.get("url.port");
 var app = new express();
 
 //app.use(compression()); // compressed responses for faster responses from the endpoints.
 app.use(helmet()); // For basic protection of the server.
 app.use(pino); // For fast, detailed and color orientated output to the console.
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Example endpoint with basic error handling
-app.get('/', async function (req, res, next) {
+app.get("/", async function(req, res, next) {
   try {
     res.json({ success: true });
     //Do stuff
@@ -25,5 +26,5 @@ app.get('/', async function (req, res, next) {
 });
 
 // Start the server listening on the assigned port number.
-app.listen(port, () => console.log('Example app listening on port: ', port));
+app.listen(port, () => console.log("Example app listening on port: ", port));
 module.exports = app;
