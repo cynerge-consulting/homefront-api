@@ -11,7 +11,7 @@
     "build": "gulp",
     "startDev": "node src/app.js",
     "startProd": "node publish/main-min.js",
-    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\""
+    "pretty": "prettier --write \"src/**/*.js\""
   },
   "husky": {
     "hooks": {
@@ -45,7 +45,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "lint-staged": "^10.2.9",
-    "mocha": "^7.2.0"
+    "mocha": "^7.2.0",
+    "prettier": "^2.0.5"
   },
   "dependencies": {
     "@babel/core": "^7.10.2",
