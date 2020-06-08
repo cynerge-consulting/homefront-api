@@ -11,7 +11,7 @@
     "build": "gulp",
     "startDev": "node src/app.js",
     "startProd": "node publish/main-min.js",
-    "pretty": "prettier --write \"src/**/*.js **/test/**/*.js **/*.json\""
+    "pretty": "prettier --write \"src/**/*.js\" \"**/test/**/*.js\" \"**/*.json\""
   },
   "husky": {
     "hooks": {
