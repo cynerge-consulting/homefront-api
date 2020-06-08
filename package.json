@@ -51,6 +51,8 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "compression": "^1.7.4",
+    "config": "^3.3.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.1.0",
     "eslint-config-standard": "^14.1.1",
     "express": "^4.17.1",
